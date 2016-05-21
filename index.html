@@ -1,0 +1,53 @@
+<html>
+
+  <head>
+    <title>Inventory App</title>
+
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+
+    <!-- 1. Load libraries -->
+    <!-- IE required polyfills, in this exact order -->
+    <script src="node_modules/es6-shim/es6-shim.min.js"></script>
+    <script src="node_modules/systemjs/dist/system-polyfills.js"></script>
+
+    <script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
+    <script src="node_modules/systemjs/dist/system.src.js"></script>
+    <script src="node_modules/rxjs/bundles/Rx.js"></script>
+    <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" type="text/css" href="app/resources/semantic.min.css">
+    <link rel="stylesheet" type="text/css" href="app/resources/styles.css">
+    <!-- 2. Configure SystemJS -->
+    <script>
+      System.config({
+        packages: {        
+          app: {
+            format: 'register',
+            defaultExtension: 'js'
+          }
+        }
+      });
+      System.import('app/boot')
+            .then(null, console.error.bind(console));
+    </script>
+
+  </head>
+
+  <body> 
+        <div class="ui menu">
+      <div class="ui container">
+        <div class="header item borderless">
+          <h1 class="ui header">
+            Angular 2 - Inventory System
+          </h1>
+        </div>
+      </div>
+    </div>
+
+    <div class="ui main text container">
+      <inventory-app></inventory-app> <!-- <--- Our app loads here! -->
+    </div>
+  </body>
+
+</html>
